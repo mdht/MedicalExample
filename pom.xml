@@ -1,75 +1,158 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-    <groupId>ru.mdht.test</groupId>
-    <artifactId>mdhtTest</artifactId>
-    <version>1.0-SNAPSHOT</version>
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>7</source>
-                    <target>7</target>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+	<groupId>ru.mdht.test</groupId>
+	<artifactId>mdhtTest</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>8</source>
+					<target>8</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+<repositories>
+	<repository>
+		<id>mdixsnaphpt</id>
+		<name>7ed03140605b-snapshots</name>
+		<url>http://artifactory.mdixinc.net:8081/artifactory/libs-snapshot</url>
+		<snapshots>
+			<enabled>true</enabled>
+		</snapshots>
+	</repository>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>1.7.25</version>
-        </dependency>
+	<repository>
+		<id>mdixlibs</id>
+		<name>7ed03140605b-releases</name>
+		<url>http://artifactory.mdixinc.net:8081/artifactory/libs-release-local</url>
+	</repository>
 
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-            <version>3.8.1</version>
-        </dependency>
+</repositories>
 
-        <dependency>
-            <groupId>org.openehealth.ipf.oht.mdht</groupId>
-            <artifactId>ipf-oht-mdht-uml-cda</artifactId>
-            <version>1.2.0.201212201425</version>
-        </dependency>
+	<properties>
+		<java.version>1.8</java.version>
+	</properties>
 
-        <dependency>
-            <groupId>org.openehealth.ipf.oht.mdht</groupId>
-            <artifactId>ipf-oht-mdht-uml-cda-consol</artifactId>
-            <version>1.2.0.201212201425</version>
-        </dependency>
+	<dependencies>
 
-        <dependency>
-            <groupId>org.openehealth.ipf.modules</groupId>
-            <artifactId>ipf-modules-cda-mdht</artifactId>
-            <version>3.4.2</version>
-        </dependency>
+		 
 
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.12</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-            <version>2.9.0</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>net.minidev</groupId>
-            <artifactId>json-smart</artifactId>
-            <version>2.3</version>
-            <scope>test</scope>
-        </dependency>
+		<dependency>
+			<groupId>org.openhealthtools.mdht.cda</groupId>
+			<artifactId>org.openhealthtools.mdht.uml.cda.consol2</artifactId>
+			<version>3.0.0-SNAPSHOT</version>
+		</dependency>
 
-    </dependencies>
+		<!-- <dependency> <groupId>lpg.runtime.java_2.0.17.v201004271640</groupId> 
+			<artifactId>lpg.runtime.java_2.0.17.v201004271640</artifactId> <version>2.0.17.v201004271640</version> 
+			</dependency> <dependency> <groupId>org.eclipse.ocl.ecore</groupId> <artifactId>org.eclipse.ocl.ecore</artifactId> 
+			<version>3.6.200.v20170522</version> </dependency> <dependency> <groupId>org.eclipse.ocl.common_1.4.200.v20160613</groupId> 
+			<artifactId>org.eclipse.ocl.common_1.4.200.v20160613</artifactId> <version>1.4.200.v20160613-1518</version> 
+			</dependency> <dependency> <groupId>org.eclipse.ocl_3.6.200.v20170522</groupId> 
+			<artifactId>org.eclipse.ocl_3.6.200.v20170522</artifactId> <version>3.6.200.v20170522-1736</version> 
+			</dependency> <dependency> <groupId>org.eclipse.uml2.types</groupId> <artifactId>org.eclipse.uml2.types</artifactId> 
+			<version>2.0.0.v20170605</version> </dependency> <dependency> <groupId>org.eclipse.emf.ecore_2.13.0.v201706090707</groupId> 
+			<artifactId>org.eclipse.emf.ecore_2.13.0.v201706090707</artifactId> <version>2.13.0.v20170609-0707</version> 
+			</dependency> <dependency> <groupId>org.eclipse.emf.common_2.13.0.v201706090707</groupId> 
+			<artifactId>org.eclipse.emf.common_2.13.0.v201706090707</artifactId> <version>2.13.0.v20170609-0707</version> 
+			</dependency> <dependency> <groupId>org.eclipse.emf.ecore.xmi_2.13.0.v201706090707</groupId> 
+			<artifactId>org.eclipse.emf.ecore.xmi_2.13.0.v201706090707</artifactId> <version>2.13.0.v20170609-0707</version> 
+			</dependency> -->
+
+
+		<dependency>
+			<groupId>lpg.runtime.java_2.0.17.v201004271640</groupId>
+			<artifactId>lpg.runtime.java_2.0.17.v201004271640</artifactId>
+			<version>2.0.17.v201004271640</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.ocl.ecore</groupId>
+			<artifactId>org.eclipse.ocl.ecore</artifactId>
+			<version>3.6.200.v20170522</version>
+		</dependency>
+
+
+
+		<dependency>
+			<groupId>org.eclipse.ocl.common_1.4.200.v20160613</groupId>
+			<artifactId>org.eclipse.ocl.common_1.4.200.v20160613</artifactId>
+			<version>1.4.200.v20160613-1518</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.ocl_3.6.200.v20170522</groupId>
+			<artifactId>org.eclipse.ocl_3.6.200.v20170522</artifactId>
+			<version>3.6.200.v20170522-1736</version>
+		</dependency>
+
+
+
+		<dependency>
+			<groupId>org.eclipse.uml2.types</groupId>
+			<artifactId>org.eclipse.uml2.types</artifactId>
+			<version>2.0.0.v20170605</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.emf.ecore_2.13.0.v20170609</groupId>
+			<artifactId>org.eclipse.emf.ecore_2.13.0.v20170609</artifactId>
+			<version>2.13.0.v20170609-0707</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.eclipse.emf.common_2.13.0.v20170609</groupId>
+			<artifactId>org.eclipse.emf.common_2.13.0.v20170609</artifactId>
+			<version>2.13.0.v20170609-0707</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.emf.ecore.xmi_2.13.0.v20170609</groupId>
+			<artifactId>org.eclipse.emf.ecore.xmi_2.13.0.v20170609</artifactId>
+			<version>2.13.0.v20170609-0707</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.mdht</groupId>
+			<artifactId>org.eclipse.mdht.emf.runtime</artifactId>
+			<version>3.0.0-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.mdht</groupId>
+			<artifactId>org.eclipse.mdht.uml.hl7.vocab</artifactId>
+			<version>3.0.0-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.mdht</groupId>
+			<artifactId>org.eclipse.mdht.uml.hl7.datatypes</artifactId>
+			<version>3.0.0-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.mdht</groupId>
+			<artifactId>org.eclipse.mdht.uml.hl7.rim</artifactId>
+			<version>3.0.0-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.mdht</groupId>
+			<artifactId>org.eclipse.mdht.uml.cda</artifactId>
+			<version>3.0.0-SNAPSHOT</version>
+		</dependency>
+ 
+		 
+	 </dependencies>
+
 
 </project>
